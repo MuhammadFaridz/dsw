@@ -826,7 +826,7 @@ if selected == "Dashboard":
 # Load the saved Random Forest model
 #model_filename = 'random_forest_model.pkl'
 #rfc = joblib.load(model_filename)
-import pickle
+import pickle 
 # Load the saved Random Forest model with pickle
 model_filename = 'random_forest_model.pkl'
 rfc = pickle.load(model_filename)
