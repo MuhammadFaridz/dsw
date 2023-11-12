@@ -827,8 +827,7 @@ if selected == "Dashboard":
 
 import pickle 
 model_filename = 'random_forest_model.pkl'
-with open(model_filename, 'rb') as file:
-    model = pickle.load(file)
+model = pickle.load(model_filename)
     
 def map_selected_value(selected_value, mapping):
     return [key for key, value in mapping.items() if value == selected_value][0]
