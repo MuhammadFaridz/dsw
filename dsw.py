@@ -824,8 +824,7 @@ if selected == "Dashboard":
             # Menampilkan pie chart di Streamlit
             st.altair_chart(pie9, use_container_width=True)
 
-# Saat menyimpan model
-joblib.dump(model, 'random_forest_model.pkl', compress=('zlib', 3))
+
 
 # Saat memuat model
 model = joblib.load('random_forest_model.pkl')
