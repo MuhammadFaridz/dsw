@@ -834,7 +834,7 @@ model_filename = 'random_forest_model.pkl'
 # Buka file model dalam mode membaca biner ('rb')
 with open(model_filename, 'rb') as file:
     # Gunakan pickle.load dengan objek file
-    rfc = pickle.load(file)
+    model = pickle.load(file)
     
 def map_selected_value(selected_value, mapping):
     return [key for key, value in mapping.items() if value == selected_value][0]
@@ -901,7 +901,7 @@ def customer_churn_prediction():
 
     if st.button('Predict Churn'):
         # Prediksi churn
-        prediction = rfc.predict(input_df)
+        prediction = model.predict(input_df)
 
         # Membuat pemetaan untuk hasil prediksi
         churn_mapping = {0: 'Customer Not Churn', 1: 'Customer Churn'}
