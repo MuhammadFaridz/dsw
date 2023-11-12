@@ -9,3 +9,4 @@ numpy
 altair
 joblib==1.2.0
 openpyxl
+scikit-learn
