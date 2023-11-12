@@ -825,18 +825,19 @@ if selected == "Dashboard":
             st.altair_chart(pie9, use_container_width=True)
 
 
-
-# Saat memuat model
-#model = joblib.load('random_forest_model.pkl')
-
-import pickle 
-#Lokasi dan nama file model
+# Lokasi dan nama file model
 model_filename = 'random_forest_model.pkl'
 
-# Buka file model dalam mode membaca biner ('rb')
-with open(model_filename, 'rb') as file:
-    #Gunakan pickle.load dengan objek file
-    model = pickle.load(file)
+# Memuat model menggunakan joblib
+model = joblib.load(model_filename)
+
+# Pastikan objek model adalah model machine learning
+assert isinstance(model, RandomForestClassifier), "Objek model bukan RandomForestClassifier"
+
+#import pickle 
+#model_filename = 'random_forest_model.pkl'
+#with open(model_filename, 'rb') as file:
+#    model = pickle.load(file)
     
 def map_selected_value(selected_value, mapping):
     return [key for key, value in mapping.items() if value == selected_value][0]
