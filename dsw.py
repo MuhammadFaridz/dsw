@@ -827,9 +827,14 @@ if selected == "Dashboard":
 #model_filename = 'random_forest_model.pkl'
 #rfc = joblib.load(model_filename)
 import pickle 
-# Load the saved Random Forest model with pickle
+# Lokasi dan nama file model
 model_filename = 'random_forest_model.pkl'
-rfc = pickle.load(model_filename)
+
+# Buka file model dalam mode membaca biner ('rb')
+with open(model_filename, 'rb') as file:
+    # Gunakan pickle.load dengan objek file
+    rfc = pickle.load(file)
+    
 def map_selected_value(selected_value, mapping):
     return [key for key, value in mapping.items() if value == selected_value][0]
 
