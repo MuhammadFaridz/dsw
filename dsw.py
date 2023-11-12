@@ -827,8 +827,12 @@ if selected == "Dashboard":
 
 import pickle 
 
-# Saat memuat model
-with open('random_forest_model.pkl', 'rb') as file:
+# Lokasi dan nama file model
+model_filename = 'random_forest_model.pkl'
+
+# Buka file model dalam mode membaca biner ('rb')
+with open(model_filename, 'rb') as file:
+    # Gunakan pickle.load dengan objek file
     model = pickle.load(file)
     
 def map_selected_value(selected_value, mapping):
