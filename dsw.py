@@ -21,6 +21,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import altair as alt
 import joblib
+from sklearn.ensemble import RandomForestClassifier
 st.set_page_config(
     page_title="CUSTOMER CHURN ANALYSYS",
     page_icon="📊",
