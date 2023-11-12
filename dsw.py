@@ -824,9 +824,12 @@ if selected == "Dashboard":
             # Menampilkan pie chart di Streamlit
             st.altair_chart(pie9, use_container_width=True)
 
-# Load the saved Random Forest model
-model_filename = 'random_forest_model.pkl'
-model = joblib.load(model_filename)
+# Saat menyimpan model
+joblib.dump(model, 'random_forest_model.pkl', compress=('zlib', 3))
+
+# Saat memuat model
+model = joblib.load('random_forest_model.pkl')
+
 #import pickle 
 # Lokasi dan nama file model
 #model_filename = 'random_forest_model.pkl'
