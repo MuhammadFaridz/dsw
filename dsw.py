@@ -823,9 +823,10 @@ if selected == "Dashboard":
             # Menampilkan pie chart di Streamlit
             st.altair_chart(pie9, use_container_width=True)
 
-# Load the saved Random Forest model
-model_filename = 'random_forest_model.pkl'
-rfc = joblib.load(model_filename)
+import pickle
+with open(model_filename, 'rb') as file:
+    rfc = pickle.load(file)
+
 
 def map_selected_value(selected_value, mapping):
     return [key for key, value in mapping.items() if value == selected_value][0]
