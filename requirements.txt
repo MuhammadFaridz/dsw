@@ -7,5 +7,5 @@ seaborn
 pandas
 numpy
 altair
-joblib
+joblib==1.0.1
 openpyxl
