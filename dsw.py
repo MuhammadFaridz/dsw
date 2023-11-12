@@ -825,14 +825,12 @@ if selected == "Dashboard":
             st.altair_chart(pie9, use_container_width=True)
 
 
-# Lokasi dan nama file model
-model_filename = 'random_forest_model.pkl'
+# Saat menyimpan model
+joblib.dump(model, 'random_forest_model.pkl', compress=('zlib', 3))
 
-# Memuat model menggunakan joblib
-model = joblib.load(model_filename)
+# Saat memuat model
+model = joblib.load('random_forest_model.pkl')
 
-# Pastikan objek model adalah model machine learning
-assert isinstance(model, RandomForestClassifier), "Objek model bukan RandomForestClassifier"
 
 #import pickle 
 #model_filename = 'random_forest_model.pkl'
