@@ -826,7 +826,7 @@ if selected == "Dashboard":
 
 
 # Saat menyimpan model
-joblib.dump(model, 'random_forest_model.pkl', compress=('zlib', 4))
+#joblib.dump(model, 'random_forest_model.pkl', compress=('zlib', 4))
 
 # Saat memuat model
 model = joblib.load('random_forest_model.pkl')
