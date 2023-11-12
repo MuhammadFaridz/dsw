@@ -825,17 +825,10 @@ if selected == "Dashboard":
             st.altair_chart(pie9, use_container_width=True)
 
 
-# Saat menyimpan model
-#joblib.dump(model, 'random_forest_model.pkl', compress=('zlib', 4))
-
-# Saat memuat model
-model = joblib.load('random_forest_model.pkl')
-
-
-#import pickle 
-#model_filename = 'random_forest_model.pkl'
-#with open(model_filename, 'rb') as file:
-#    model = pickle.load(file)
+import pickle 
+model_filename = 'random_forest_model.pkl'
+with open(model_filename, 'rb') as file:
+    model = pickle.load(file)
     
 def map_selected_value(selected_value, mapping):
     return [key for key, value in mapping.items() if value == selected_value][0]
