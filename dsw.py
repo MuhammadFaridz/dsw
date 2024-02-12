@@ -32,7 +32,7 @@ with open('style.css')as f:
  st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
 with st.sidebar:
-    amazon = Image.open(r'kucing.jpg')
+    amazon = Image.open(r'logo.png')
     st.image(amazon, width=250)
     st.markdown('\n')
     selected = option_menu("Main Menu", ["Dashboard", 'Prediction'], 
